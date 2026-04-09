@@ -6,18 +6,18 @@ const SingleCountry = ({ country }) => {
       <img
         src={country.flags.svg}
         alt={country.name}
-        className="w-66 h-40 object-cover"
+        className="w-90 h-50 object-cover"
       />
-      <div className="p-5">
+      <div className="p-5 mb-8 ">
         <h2 className="text-xl font-bold mb-4">{country.name}</h2>
-        <p>
-          <span className="font-bold text-[0.975rem]">Population: </span>
+        <p className="mb-1">
+          <span className="font-bold text-[0.975rem] ">Population: </span>
           {country.population.toLocaleString()}
         </p>
-        <p>
+        <p className="mb-1">
           <span className="font-bold">Region:</span> {country.region}
         </p>
-        <p>
+        <p className="mb-1">
           <span className="font-bold">Capital:</span> {country.capital}
         </p>
       </div>
