@@ -2,11 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { Search } from "lucide-react";
 
-const SearchBox = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-
+const SearchBox = ({ searchTerm, setSearchTerm }) => {
   return (
-    <div className="px-5 relative mb-10">
+    <div className="px-5 relative mb-10 max-w-120 ">
       <input
         type="text"
         name="search"
@@ -14,7 +12,7 @@ const SearchBox = () => {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         placeholder="Search for a country..."
-        className="w-full h-12 shadow-[0_2px_12px_4px_rgba(0,0,0,0.03)] rounded-sm px-12 text-sm outline-none"
+        className=" h-12 shadow-[0_2px_12px_4px_rgba(0,0,0,0.03)] rounded-sm px-12 text-sm outline-none"
       />
       <Search
         size={20}

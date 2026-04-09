@@ -2,8 +2,12 @@ import React from "react";
 
 const SingleCountry = ({ country }) => {
   return (
-    <div className="max-sm:mx-12 rounded-md shadow-[0_2px_12px_4px_rgba(0,0,0,0.09)] overflow-hidden mb-10 ">
-      <img src={country.flags.svg} alt={country.name} />
+    <div className="max-sm:mx-12  rounded-md shadow-[0_2px_12px_4px_rgba(0,0,0,0.09)] overflow-hidden mb-10 ">
+      <img
+        src={country.flags.svg}
+        alt={country.name}
+        className="w-66 h-40 object-cover"
+      />
       <div className="p-5">
         <h2 className="text-xl font-bold mb-4">{country.name}</h2>
         <p>
