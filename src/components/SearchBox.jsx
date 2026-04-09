@@ -6,7 +6,7 @@ const SearchBox = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
-    <div className="px-5 relative mb-5">
+    <div className="px-5 relative mb-10">
       <input
         type="text"
         name="search"
