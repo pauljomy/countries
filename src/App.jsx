@@ -3,20 +3,23 @@ import SearchBox from "@/components/SearchBox";
 import CountriesList from "@/components/CountriesList";
 import { useState } from "react"; // remove useEffect
 import countryList from "./data.json";
-import Dropdown from "./components/DropDown";
+import Dropdown from "@/components/DropDown";
+
+import { useTheme } from "@/context/themeToggler";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [noResults, setNoResults] = useState(false);
+  const { isDark } = useTheme();
 
   const filteredCountries = countryList.filter((country) =>
     country.name.toLowerCase().trim().includes(searchTerm.toLowerCase()),
   );
 
   return (
-    <div>
+    <div className={`${isDark ? "bg-background text-white" : ""} min-h-screen`}>
       <NavBar />
-      <div className="md:flex justify-between max-w-7xl items-center mx-auto">
+      <div className="md:flex justify-between max-w-7xl items-center mx-auto md:px-14 px-5 gap-8">
         <SearchBox searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         <Dropdown />
       </div>

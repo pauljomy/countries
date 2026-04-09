@@ -1,8 +1,11 @@
 import { Search } from "lucide-react";
+import { useTheme } from "@/context/themeToggler";
 
 const SearchBox = ({ searchTerm, setSearchTerm }) => {
+  const { isDark } = useTheme();
+
   return (
-    <div className="px-5 relative mb-6 flex-1 ">
+    <div className={`relative mb-6 flex-1 ${isDark ? "bg-component-bg" : ""}`}>
       <input
         type="text"
         name="search"
@@ -10,7 +13,7 @@ const SearchBox = ({ searchTerm, setSearchTerm }) => {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         placeholder="Search for a country..."
-        className=" h-12 shadow-[0_2px_12px_4px_rgba(0,0,0,0.03)] rounded-sm px-12 text-sm outline-none w-full"
+        className=" h-12 shadow-[0_2px_12px_4px_rgba(0,0,0,0.03)] rounded-sm px-15 text-sm md:text-[1em] outline-none w-full"
       />
       <Search
         size={20}
